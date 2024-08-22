@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fecha y Hora Actual</title>
+    <title>Fecha y Hora Actual con Fondo</title>
     <style>
         body {
             font-family: monospace;
-            background-color: #f3f4d3;
+            background-image: url('fondo.jpg'); /* Ruta a la imagen .jpg */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
+            color: #fff; /* Color del texto para que sea legible sobre el fondo */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
         }
         .container {
             text-align: center;
+  position: relative;
+  top: 100px;
         }
         .datetime {
             font-size: 3em;
-            color: #525252;
+            color: #525252
         }
-        .slogan {
-font-family: helvetica;
-            font-size: 3em;
-            color: #b0d000;
-        }
+
     </style>
 </head>
 <body>
     <div class="container">
-<div id="slogan" class="slogan">
-<H2>INCOMEL</H2></div>
-<div id="datetime" class="datetime"></div>
+
+        <div id="datetime" class="datetime"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Incluye el script aquí -->
 </body>
 </html>
