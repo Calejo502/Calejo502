@@ -8,7 +8,7 @@ function displayDateTime() {
         hour: 'numeric',
         minute: 'numeric',
 	second: 'numeric',
-        hour12: true
+        hour12: false
     };
     const formattedDateTime = now.toLocaleString('es-ES', options);
     document.getElementById('datetime').textContent = formattedDateTime;
