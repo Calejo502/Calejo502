@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fecha y Hora Actual con Fondo</title>
     <style>
         body {
             font-family: monospace;
-            background-image: url('fondo.jpg'); /* Ruta a la imagen .jpg */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,22 +16,40 @@
             margin: 0;
             color: #fff; /* Color del texto para que sea legible sobre el fondo */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
-        }
-        .container {
-            text-align: center;
-  position: relative;
-  top: 100px;
-        }
-        .datetime {
-            font-size: 3em;
-            color: #525252
+            overflow: hidden; /* Evita barras de desplazamiento */
         }
 
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+            z-index: -1; /* Envía el video al fondo */
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            top: 100px;
+        }
+
+        .datetime {
+            font-size: 3em;
+            color: #525252;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="background-video">
+        <source src="fondo.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
 
+    <!-- Contenedor para la fecha y hora -->
+    <div class="container">
         <div id="datetime" class="datetime"></div>
     </div>
 
